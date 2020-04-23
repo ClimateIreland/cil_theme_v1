@@ -1,0 +1,10 @@
+$primary: #4d769c;
+$secondary: #fff;
+
+// Theme fonts
+$font-family-title: Plex;
+$serif: Crimson;
+$f-sans-serif: Crimson, 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Initialize the Open edX Bootstrap theme
+@import 'edx-bootstrap/sass/open-edx/theme';
