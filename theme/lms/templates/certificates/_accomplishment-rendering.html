@@ -1,0 +1,192 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+<%
+course_mode_class = course_mode if course_mode else ''
+%>
+
+<style>
+    .wrapper-accomplishment-rendering{
+        background-color: #ffffff;
+
+    }
+     .accomplishment-rendering{
+ background-image: url('https://www.climateireland.ie/web_resource/images/logos/Climate-Ireland-Logo-RGB-No-Text_white.png');
+ background-color: #f5f5f5;
+ background-size: 90%;
+ padding-top: 50px;
+ }
+
+ /* .accomplishment-type {
+     margin-top: 50px;
+ } */
+
+ .accomplishment-statement-lead{
+    color: #4d4b4b;
+    font-size: 1.125rem;
+ }
+
+ .accomplishment-type-label .hd-3 {
+    color: #008801;
+    font-size: 3.75rem;
+    margin-left: 0;
+ }
+
+ .accomplishment-statement-detail .copy{
+
+ }
+
+ .accomplishment-course-name{
+    line-height: 1.2;
+color: #000;
+font-weight: 600;
+font-size: 1.75rem;
+ }
+
+ .accomplishment-recipient{
+    line-height: 1.2;
+color: #000;
+font-weight: 600;
+font-size: 2.5rem;
+ }
+
+
+</style>
+
+
+
+<main class="accomplishment accomplishment-main">
+    <div class="wrapper-accomplishment-rendering">
+        <div class="accomplishment-rendering">
+        <!-- style="background-image: url('https://www.climateireland.ie/web_resource/images/logos/Climate-Ireland-Logo-RGB-No-Text_white.png');
+               background-color: #eff2f5;
+               background-size: 90%;"> -->
+
+            <span class="deco-corner deco-corner-tl"></span>
+            <span class="deco-corner deco-corner-tr"></span>
+            <span class="deco-corner deco-corner-bl"></span>
+            <span class="deco-corner deco-corner-br"></span>
+<!-- 
+            <div class="accomplishment-type">
+                <span class="accomplishment-type-symbol">
+                    <img class="src" src="/static/certificates/images/ico-${course_mode_class}.png" alt="Image for course mode of type ${course_mode_class}">
+                </span>
+
+                <span class="accomplishment-type-label hd-3">${document_title}</span>
+            </div> -->
+            <div class="accomplishment-type">
+                <span class="accomplishment-type-label hd-3">Certificate of Completion</span>
+            </div>
+
+            <div class="wrapper-statement-and-signatories">
+                <!-- <div class="accomplishment-statement">
+                    <p class="accomplishment-statement-lead">
+                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name}</strong>
+                        <span class="accomplishment-summary copy copy-lead">${accomplishment_copy_description_full}</span>
+
+                        <span class="accomplishment-course hd-1 emphasized">
+                            <span class="accomplishment-course-org">${accomplishment_copy_course_org}  </span>
+                            <span class="accomplishment-course-number">${course_number}</span>:
+                            <span class="accomplishment-course-name">${accomplishment_copy_course_name}</span>
+                        </span>
+                    </p>
+
+                    <p class="accomplishment-statement-detail copy copy-lead">${accomplishment_copy_course_description}</p>
+                </div> -->
+                <div class="accomplishment-statement">
+                    <p class="accomplishment-statement-lead">
+                        <span class="accomplishment-statement-detail copy">This is to certify that</span>
+                        <strong class="accomplishment-recipient">${accomplishment_copy_name}</strong>
+                        <span class="accomplishment-summary copy">successfully completed</span>
+
+                        <span class="accomplishment-course">
+                            <span class="accomplishment-course-name">Climate Action Primer</span>
+                        </span>
+
+                        <span class="accomplishment-statement-detail copy">a course offered by Climate Ireland, in collaboration with Climate Action Regional Offices</span>
+                    </p>
+                </div>
+
+    
+            </div>
+
+            <div class="accomplishment-orgs">
+                <h3 class="accomplishment-orgs-title sr-only">${_("Supported by the following organizations")}</h3>
+                <ul class="wrapper-orgs list-orgs">
+                    <li class="wrapper-organization">
+                        <div class="organization organization-edX">
+                            <img class="organization-logo" src="${static.url('images/CI_logo.png')}" alt="${platform_name}">
+                        </div>
+                    </li>
+                    <li class="wrapper-organization">
+                        <div class="organization organization-edX">
+                            <img class="organization-logo" src="${static.url('images/CARO_logo.png')}" alt="${platform_name}">
+                        </div>
+                    </li>
+                    <li class="wrapper-organization">
+                        <div class="organization organization-edX">
+                            <img class="organization-logo" src="${static.url('images/CCMA_logo.png')}" alt="${platform_name}">
+                        </div>
+                    </li>
+                    <li class="wrapper-organization">
+                        <div class="organization organization-edX">
+                            <img class="organization-logo" src="${static.url('images/LGMA_CMYK.png')}" alt="${platform_name}">
+                        </div>
+                    </li>
+
+
+                    <!-- 
+                        % if organization_logo:
+                    <li class="wrapper-organization">
+                        <div class="organization">
+                            <img class="organization-logo" src="${organization_logo.url}" alt="${platform_name}">
+                        </div>
+                    </li>
+                    % endif
+                 -->
+                </ul>
+            </div>
+            <!--certID was added by D.Casey-->
+            <div class="certID" style="width: 100%;overflow: hidden; margin-left:20%">
+                <dl class="" style="width: 50%;float: left">
+                <dt class="label copy copy-meta">${certificate_date_issued_title}</dt>
+                    <dd class="value copy copy-base">${certificate_date_issued}</dd>
+                </dl>
+                <dl class="" style="width: 50%;float: right">
+              
+                    <dt class="label copy copy-meta">${certificate_id_number_title}:</dt>
+                    <dd class="value copy copy-base">${certificate_id_number}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="wrapper-accomplishment-metadata">
+        <div class="accomplishment-metadata">
+            <h2 class="accomplishment-metadata-title hd-6">${accomplishment_copy_more_about}</h2>
+
+            <div class="wrapper-metadata">
+                <dl class="metadata accomplishment-recipient">
+                    <dt class="label sr-only">${_("Awarded to:")}</dt>
+                    <dd class="value copy copy-meta">
+                        <span class="recipient-img">
+                            <img class="src" src="/static/certificates/images/demo-user-profile.png" alt="Recipient Image">
+                        </span>
+                        <div class="recipient-details">
+                            <h3 class="recipient-name">${accomplishment_copy_name}</h3>
+                            <p class="recipient-username">${accomplishment_copy_username} @ ${platform_name}</p>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="metadata accomplishment-id">
+                    <dt class="label copy copy-meta">${certificate_id_number_title}:</dt>
+                    <dd class="value copy copy-base">${certificate_id_number}</dd>
+                </dl>
+                <dl class="metadata accomplishment-date">
+                    <dt class="label copy copy-meta">${certificate_date_issued_title}</dt>
+                    <dd class="value copy copy-base">${certificate_date_issued}</dd>
+                </dl>
+            </div>
+        </div>
+    </div> -->
+</main>

@@ -180,6 +180,15 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   display: inline-block;
 }
 
+.courses-container .courses .course .course-image .cover-image {
+  height: 100%;
+}
+
+/////////////////// Course details
+.course-info header.course-profile {
+  height: 100%;
+}
+
 /////////////////// User profile
 .view-profile .profile-self .wrapper-profile-field-account-privacy {
   margin-top: -$content-padding-top;
@@ -191,6 +200,15 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 .view-profile .wrapper-profile-section-container-one .wrapper-profile-section-one {
   border: solid $primary;
   border-width: 5px 1px 1px 1px;
+}
+
+// Course Overview
+.vertical-title {
+  color: #344f69;
+}
+
+.content-wrapper .course-tabs .nav-item .nav-link {
+  color: #4d769c!important;
 }
 
 // Account settings
@@ -260,6 +278,7 @@ a:not(.btn), a:visited:not(.btn) {
 .wrapper-course-details > .course-title > .course-target-link {
   color:#4a5569;
 }
+
  
 .wrapper-footer footer .site-nav .nav-item .nav-link {
   color: #fff;
@@ -271,3 +290,23 @@ a:not(.btn), a:visited:not(.btn) {
   background-color: #4d769c !important;
 }
 
+.underConstructionWrapper{
+  
+  width:100%;
+}
+
+.underConstructionDigger {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+// .underConstructionDigger {
+//     position: absolute;
+//     left: 25%;
+//     top: 45%;
+//     z-index: 1;
+//     width: 40%;
+// }
