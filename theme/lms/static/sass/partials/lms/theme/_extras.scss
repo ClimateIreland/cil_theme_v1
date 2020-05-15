@@ -180,14 +180,13 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   display: inline-block;
 }
 
-.courses-container .courses .course .course-image .cover-image {
-  height: 100%;
-}
-
 /////////////////// Course details
 .course-info header.course-profile {
   height: 100%;
 }
+.course-info header.course-profile .intro-inner-wrapper .media .hero { 
+  border: none; 
+} 
 
 /////////////////// User profile
 .view-profile .profile-self .wrapper-profile-field-account-privacy {
