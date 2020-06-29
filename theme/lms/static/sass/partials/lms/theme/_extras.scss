@@ -3,8 +3,7 @@
 $content_padding_top: 24px;
 $content-padding-bottom: 10px;
 $header-height: 75px;
-$footer-height: 240px;
-// $footer-height: 125.5px;
+$footer-height: 220px;
 
 body, body.view-profile {
   min-height: initial;
@@ -25,8 +24,13 @@ body, body.view-profile {
   padding-top: 5px;
 }
 
-.global-header .hamburger-menu .line {
+.global-header > .main-header > .hamburger-menu > .line {
   background-color: #a5d3f7;
+}
+
+.global-header > .main-header > .mobile-menu > .mobile-nav-link > a:hover, 
+.global-header > .main-header > .mobile-menu > .mobile-nav-link > a:focus {
+  background-color: #4d769c;
 }
 
 .btn, .global-header .nav-links .secondary .btn {
@@ -183,7 +187,10 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 /////////////////// Course details
 .course-info header.course-profile {
   height: 100%;
+  padding-top:0px
 }
+  
+
 .course-info header.course-profile .intro-inner-wrapper .media .hero { 
   border: none; 
 } 
@@ -206,9 +213,58 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   color: #344f69;
 }
 
+// DCasey June 2020: scroll was creating grey bar 
+.course-material {
+  overflow-x: auto;
+  background-color: white;
+}
+
+// DCasey June 2020: important required as discussion is styled from both
+// lms-main.css and lms-discusion-bootstrap.css 
+.content-wrapper .course-tabs {
+  overflow-x: auto !important;
+}
+
+.cilt-nav-designed-by-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.cilt-nav-designed-by-img {
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 5px
+}
+
 .content-wrapper .course-tabs .nav-item .nav-link {
   color: #4d769c!important;
 }
+
+@media only screen and (min-width: 992px){
+// DCasey June 2020: fixed margin issue for Course Instructor Page
+.view-instructordash > .window-wrap {
+  margin-top:0px
+}
+
+.view-courseware > .window-wrap > #content {
+  margin-top:0px
+}
+
+.view-progress > .window-wrap > #content {
+  margin-top:0px
+}
+
+.None > .window-wrap > #content {
+  margin-top:0px
+}
+
+// DCasey June 2020: fixed margin issue for Course Discussion Page
+.discussion > .window-wrap > #content{
+  margin-top:75px
+}
+}
+
+
 
 // Account settings
 .wrapper-account-settings .wrapper-header {
@@ -235,12 +291,11 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   padding: 25px 40px;
   color: #ffffff;
   background-color: #4a5569;
-  
-  .wrapper-logo {
-      display: none;
-  }
-  .copyright {
-      display: none;
+
+
+footer .copyright {
+      color: #ffffff;
+      max-width: 440px; 
   }
   .nav-legal ul {
       display: inline-block;
@@ -256,7 +311,8 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 }
 ._footer-upper {
   overflow:auto;
-  padding-left: 100px;
+  padding-left: 50px;
+  padding-bottom: 10px;
   background-color: #fafafa;
   border-top: solid;
   border-color: $primary;
@@ -270,9 +326,9 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   color: white;
 }
 
-a:not(.btn), a:visited:not(.btn) {
-  color: #fff;
-}
+// a:not(.btn), a:visited:not(.btn) {
+//   color: #fff;
+// }
 
 .wrapper-course-details > .course-title > .course-target-link {
   color:#4a5569;
@@ -284,13 +340,12 @@ a:not(.btn), a:visited:not(.btn) {
 }
 
 /////////////////////////////////////////////// Figures
-// DC 23-04-20: It would seem that all Figures customisation requires !important to take effect
+// DCasey April 20: It would seem that all Figures customisation requires !important to take effect
 .header-area__3RCaLODi {
   background-color: #4d769c !important;
 }
 
 .underConstructionWrapper{
-  
   width:100%;
 }
 
@@ -302,10 +357,3 @@ a:not(.btn), a:visited:not(.btn) {
 
 }
 
-// .underConstructionDigger {
-//     position: absolute;
-//     left: 25%;
-//     top: 45%;
-//     z-index: 1;
-//     width: 40%;
-// }
