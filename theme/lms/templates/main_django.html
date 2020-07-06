@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--DCasey June 2020: uses main_django.html-->
-% if uses_bootstrap:
+{% if uses_bootstrap %}
 <!--DCasey June 2020: uses bootstrap-->
-% else:
+{% else %}
 <!--DCasey June 2020: no bootstrap-->
-% endif
+{% endif %}
 
 {% load sekizai_tags i18n configuration theme_pipeline optional_include staticfiles %}
 <html lang="{{LANGUAGE_CODE}}">
@@ -32,14 +32,13 @@
   <meta name="path_prefix" content="{{EDX_ROOT_URL}}">
 
   <!-- DCasey June-2020: include bootstrap throughout, by removing an if statement-->
-## xss-lint: disable=mako-invalid-js-filter
-<script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
+
+<script type="text/javascript" src="{% static 'common/js/vendor/bootstrap.bundle.js' %}"></script>
 
 <!-- DCasey June-2020: include bootstrap css, unless it's already included from webpack-->
-% if not uses_bootstrap:
- <link rel="stylesheet" href="${static.url('css/bootstrap/lms-main.css')}" type="text/css" media="all" /> 
-<!--<link rel="stylesheet" href="${static.url('css/bootstrap/bootstrap.min.css')}" type="text/css" media="all">-->
-% endif 
+{% if not uses_bootstrap %}
+ <link rel="stylesheet" href="{% static 'css/bootstrap/lms-main.css' %}" type="text/css" media="all" /> 
+{% endif %} 
 </head>
 
 <body class="{% block bodyclass %}{% endblock %} lang_{{LANGUAGE_CODE}}">

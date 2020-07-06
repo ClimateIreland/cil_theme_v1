@@ -1,63 +1,152 @@
 /////////////////// General
-
-$content_padding_top: 24px;
+$content-height-offset: 25px; // DCasey July 2020: stick footer to bottom
+$content-padding-top: 50px;
 $content-padding-bottom: 10px;
 $header-height: 75px;
-$footer-height: 220px;
+$footer-height-xs: 297.5px;
+$footer-height-sm: 345px;
+$footer-height-md: 187px;
+$footer-height-lg: 202.4px;
+$cil-primary: #4a5569; // Should be same as $banner
+$cil-secondary: #5b7599;
+$cil-tertiary: #f2f3f4;
+// $cil-tertiary: #fafafa;
 
 body, body.view-profile {
   min-height: initial;
-  background-color: #fff;
+  background-color: white;
 }
 
 %btn-pl-default-base {
-  border-radius: 0;
+  border-radius: 5;
 }
 
-.global-header {
-  // DC 23-04-20: Dont know why, but does not work without !important
-  background: #4a5569 !important;
-}
-
-.main-header {
-  background-color: #4a5569;
-  padding-top: 5px;
-}
-
-.global-header > .main-header > .hamburger-menu > .line {
-  background-color: #a5d3f7;
-}
-
-.global-header > .main-header > .mobile-menu > .mobile-nav-link > a:hover, 
-.global-header > .main-header > .mobile-menu > .mobile-nav-link > a:focus {
-  background-color: #4d769c;
-}
-
-.btn, .global-header .nav-links .secondary .btn {
-  border-radius: 0;
-}
-
-%t-title {
+h1, h2, h3, h1 span, h2 span, h3 span {
   font-family: $font-family-title;
+  color: $banner;
 }
 
-h1, h2, h3, h1 span, h2 span, h3 span, .nav-item {
-  font-family: $font-family-title;
+#content.content-wrapper.main-container {
+  padding-left:0px;
+  padding-right:0px;
+  margin-top: 0px;
 }
 
 #content.content-wrapper {
+  min-height: calc(100vh - #{$header-height + $footer-height-lg - $content-padding-top - $content-padding-bottom - $content-height-offset});
+
   @include media-breakpoint-up(lg) {
     padding-top: $content-padding-top;
     padding-bottom: $content-padding-bottom;
-    margin-top: 75px;
+    margin-top: $header-height;
   }
-  min-height: calc(100vh - #{$header-height + $content-padding-top + $content-padding-bottom + $footer-height}); // sticky footer
+}
+
+.view-in-course.view-instructordash #content.main-container,
+.discussion #content.main-container,
+.view-profile  #content.main-container{
+  @include media-breakpoint-up(lg) {
+    padding-top: $content-padding-top;
+    padding-bottom: $content-padding-bottom;
+    margin-top: $header-height;
+  }
+}
+
+body.view-profile .profile-self .wrapper-profile-field-account-privacy {
+  margin-top: 0px;
 }
 
 ////////////////// Fonts
 @import "fonts";
 
-/////////////////// Register/Sign in header
+%t-title {
+  font-family: $font-family-title;
+}
+
+/////////////////// Header
+
+body header.global-header {
+  background-color: $banner;
+
+  .main-header {
+    .hamburger-menu {
+      .line{
+        background-color: white;
+      }  
+    }
+    .hamburger-menu:hover {
+      .line{
+        background-color: $primary;
+      }
+    }
+  }
+
+  .mobile-menu .mobile-nav-link {
+    a:hover, a:focus {
+      background-color: $primary;
+      color: white;
+    }
+  }
+
+  .nav-links .main {
+    .nav-item {
+      a {
+        color: white;
+      }
+      a:hover {
+        color: $cil-tertiary;
+      }
+  }
+}
+
+  .nav-links .secondary {
+    .dropdown-user-menu {
+      position: fixed;
+    }
+
+    .toggle-user-dropdown > .fa-caret-down {
+      color: white;
+    }
+
+    .nav-item {
+      a {
+        color: white;
+      }
+      a:hover {
+        color: $cil-tertiary;
+      }
+
+      a.register-btn{
+        background-color: $primary;
+      }
+      a.register-btn:hover{
+        background-color: white;
+        color: $primary;
+      }
+      a.sign-in-btn:hover{
+        background-color: white;
+        color: $primary;
+      }
+    }
+
+    .dropdown-nav-item{
+      a {
+        color: $primary;
+      }
+      a:hover {
+        background-color: $primary;
+        color: white;
+      } 
+    }
+    .user-image-frame {
+      border-radius: 0;
+    }
+  }
+
+  .main-header h1.header-logo .course-header span {
+    color: white;
+  }
+}
 
 header.global-header {
   @include media-breakpoint-up(lg) {
@@ -69,37 +158,17 @@ header.global-header {
   box-shadow: none;
 }
 
-header.global-header .nav-links .secondary .user-image-frame {
-  border-radius: 0;
-}
-
-header.global-header .nav-links .secondary .dropdown-user-menu {
-  position: fixed;
-}
-
-.toggle-user-dropdown > .fa-caret-down {
-  color: #fff;
-}
-
 /////////////////// Home page
 .home header {
   box-shadow: none;
-  background-color: #fff;
-}
-
-.global-header .header-logo .course-header {
-  color: #fff!important;
+  background-color: white;
 }
 
 .home > header .title {
   box-shadow: none;
-  background-color:#fff;
+  background-color: white;
   border-radius: 20px;
   margin-top: 20px;
-}
-
-.global-header .nav-links .secondary a.register-btn{
-  background-color: #4d769c;
 }
 
 .home > header .outer-wrapper {
@@ -122,28 +191,45 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   padding-top: 0;
 }
 
-.global-header .nav-links .secondary .nav-item a {
-  color: $secondary !important;
+////////////////// Discover new
+.courses-container .courses .course .course-image {
+  .cover-image{
+    text-align: center;
+    height: 200px;
+  }
+  .cover-image:before{
+    text-align: center;
+    height: 200px;
+  }
 }
 
-.global-header .nav-links .secondary .nav-item .dropdown-item a {
-  color: #313131 !important;
+.courses-container .courses .course .course-image .cover-image img {
+  height: 100%;
+  width: auto;
 }
 
 ////////////////// User dashboard /dashboard
-.dashboard .main-container {
-  padding: initial;
+.dashboard .main-container .my-courses {
+  .course .details .wrapper-course-image {
+    max-height:300px;
+  }
+  .listing-courses .course-item{
+    background-color: $cil-tertiary;
+  }
 }
 
+
 ////////////////// Course about page
+
 .course-info header.course-profile {
-  background: #4a5569;
-  box-shadow: none;
-  border-bottom: none;
-  
+  background-color: $cil-tertiary;
+  border-bottom: solid;
+  border-color: $banner;
   .intro-inner-wrapper {
+    background-color: $cil-tertiary;
     border: none;
     box-shadow: none;
+    max-width: 1080px;
   }
 }
 
@@ -172,7 +258,7 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 
 /////////////////// Course search
 .find-courses, .university-profile {
-  background-color: #fff;
+  background-color: white;
 }
 
 .home .courses-container .courses .courses-listing {
@@ -189,18 +275,30 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   height: 100%;
   padding-top:0px
 }
-  
 
 .course-info header.course-profile .intro-inner-wrapper .media .hero { 
   border: none; 
 } 
+
+////////////////// Course discussion page
+// DCasey June 2020: important required as discussion is styled from both
+// lms-main.css and lms-discusion-bootstrap.css 
+.content-wrapper .course-tabs {
+  overflow-x: auto !important;
+}
+
+////////////////// Course instructor page
+.instructor-nav .nav-item a:hover{
+   text-decoration: none;
+}
+
 
 /////////////////// User profile
 .view-profile .profile-self .wrapper-profile-field-account-privacy {
   margin-top: -$content-padding-top;
 }
 .view-profile .wrapper-profile {
-  background-color: #fff;
+  background-color: white;
 }
 
 .view-profile .wrapper-profile-section-container-one .wrapper-profile-section-one {
@@ -210,19 +308,13 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 
 // Course Overview
 .vertical-title {
-  color: #344f69;
+  color: $primary;
 }
 
 // DCasey June 2020: scroll was creating grey bar 
 .course-material {
   overflow-x: auto;
   background-color: white;
-}
-
-// DCasey June 2020: important required as discussion is styled from both
-// lms-main.css and lms-discusion-bootstrap.css 
-.content-wrapper .course-tabs {
-  overflow-x: auto !important;
 }
 
 .cilt-nav-designed-by-label {
@@ -237,34 +329,12 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 }
 
 .content-wrapper .course-tabs .nav-item .nav-link {
-  color: #4d769c!important;
+  color: $primary !important;
 }
-
-@media only screen and (min-width: 992px){
-// DCasey June 2020: fixed margin issue for Course Instructor Page
-.view-instructordash > .window-wrap {
-  margin-top:0px
+ 
+.hd.hd-2.unit-title {
+  color: $banner;
 }
-
-.view-courseware > .window-wrap > #content {
-  margin-top:0px
-}
-
-.view-progress > .window-wrap > #content {
-  margin-top:0px
-}
-
-.None > .window-wrap > #content {
-  margin-top:0px
-}
-
-// DCasey June 2020: fixed margin issue for Course Discussion Page
-.discussion > .window-wrap > #content{
-  margin-top:75px
-}
-}
-
-
 
 // Account settings
 .wrapper-account-settings .wrapper-header {
@@ -278,82 +348,65 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 }
 
 /////////////////// Footer
-.sidebyside {
-  float:left; 
-  margin:5px;
-}
-.sidebyside {
-  float:left; 
-  margin:5px;
-}
+
+
 .wrapper-footer {
   box-shadow: none;
-  padding: 25px 40px;
-  color: #ffffff;
-  background-color: #4a5569;
-
-
-footer .copyright {
-      color: #ffffff;
-      max-width: 440px; 
-  }
-  .nav-legal ul {
-      display: inline-block;
-  }
-  footer #footer-openedx .footer-about-openedx a {
-      float: none;
-      color: #ffffff;
-  }
-  ._footer-upper {
-    background-color: #fafafa;
-  }
-
-}
-._footer-upper {
-  overflow:auto;
-  padding-left: 50px;
-  padding-bottom: 10px;
-  background-color: #fafafa;
+  margin: 0px!important; // DCasey July 2020: set from  multiple places i.e. lms-course.css
+  padding: 0px!important; // DCasey July 2020: set from  multiple places i.e. lms-course.css
   border-top: solid;
   border-color: $primary;
-}
 
-.wrapper-footer footer#footer-openedx .colophon .nav-colophon li a {
-  color: white;
-}
+  .cilt-footer-upper {
+    background-color: $cil-tertiary;
 
-.wrapper-footer footer#footer-openedx a {
-  color: white;
-}
+    img {
+      width:100%;
+      padding: 15px 0px 15px 0px;
+    }   
+  }
 
-// a:not(.btn), a:visited:not(.btn) {
-//   color: #fff;
-// }
+  .cilt-footer-lower {
+    background-color: $banner;
+    padding: 15px;
 
-.wrapper-course-details > .course-title > .course-target-link {
-  color:#4a5569;
-}
+    .navbar {
+      padding-bottom: 15px;
+    }
 
- 
-.wrapper-footer footer .site-nav .nav-item .nav-link {
-  color: #fff;
+    .site-nav .nav-item {
+      .nav-link {
+        color: white;
+      }
+      .nav-link:hover {
+        color:$cil-tertiary;
+      }
+    }
+
+    .copyright {
+      display: none;
+      color: white;
+      max-width: 440px; 
+    }
+
+    .footer-about-openedx{
+      text-align:right
+    }
+  }
 }
 
 /////////////////////////////////////////////// Figures
 // DCasey April 20: It would seem that all Figures customisation requires !important to take effect
 .header-area__3RCaLODi {
-  background-color: #4d769c !important;
+  background-color: $primary!important;
 }
 
-.underConstructionWrapper{
+/////////////////////////////////////////////// Index
+.cilt-under-construction-wrapper{
   width:100%;
+  img {  width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-
-.underConstructionDigger {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-

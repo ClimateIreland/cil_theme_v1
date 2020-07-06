@@ -20,9 +20,8 @@ from openedx.core.djangolib.markup import HTML, Text
                 <%include file="index_overlay.html" />
               % endif
             </div>
-            <div class="underConstructionWrapper">
-              <!-- <img class="underConstructionIreland" src="${static.url('images/Climate-Ireland-Logo-RGB No Text_blue.png')}"> -->
-              <img class="underConstructionDigger" src="${static.url('images/construction_blue.png')}">
+            <div class="cilt-under-construction-wrapper">
+              <img src="${static.url('images/construction_blue.png')}">
             </div>
             <!-- 
               % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):

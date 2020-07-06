@@ -10,7 +10,7 @@
 <%namespace name='static' file='static_content.html'/>
 
 
-<div class="_footer-upper">
+<!-- <div class="_footer-upper">
   <div class="container-fluid">
     
 <div class="row">
@@ -47,12 +47,47 @@
         </div>
       </div>
 </div>
-</div>
-
-  <div class="container-fluid wrapper-footer">
+</div> -->
+<div class="wrapper-footer">
     <footer>
+        <div class="container-fluid cilt-footer-upper">
+        <div class="row">
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="https://www.marei.ie" target="_blank"><img src="${static.url('images/MaREI_Logo.png')}" alt="MaREI" style="max-width: 150px;"></a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="https://www.ucc.ie/en/eri/" target="_blank"><img src="${static.url('images/ERI_Logo.png')}" alt="ERI" style="max-width: 200px;"></a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="https://www.ucc.ie" target="_blank"><img src="${static.url('images/UCC_Logo_2018_low.png')}" alt="UCC" style="max-width: 130px;"></a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="http://www.dccae.gov.ie/" target="_blank"><img src="${static.url('images/DCCAE_primary2.png')}" alt="EPA" style="max-width: 270px;"></a>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="https://www.epa.ie" target="_blank"><img src="${static.url('images/EPA_Logo.png')}" alt="EPA" style="max-width: 160px;"></a>
+                </div>
+            </div>
+    
+            <div class="col-6 col-sm-4 col-md-2 text-center my-auto">
+                <div>
+                    <a href="https://www.ichec.ie" target="_blank"><img src="${static.url('images/ICHEC_Logo.png')}" alt="ICHEC" style="max-width: 120px;"></a>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div class="container-fluid cilt-footer-lower">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-sm-7">
           
           <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
             <ul class="navbar-nav">
@@ -65,43 +100,29 @@
             </ul>
           </nav>
           
-
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
           <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
-
-          
-          <!-- <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
-            <ul class="navbar-nav">
-              
-                <li class="nav-item">
-                  <a class="nav-link" href="/tos">Terms of service</a>
-                </li>     
-                 
-            </ul>
-          </nav> -->
-          
+  
         </div>
-        <div class="col-md-3">
+        <div class="col-sm-5">
           ## Please leave this link and use one of the logos provided
           ## The OpenEdX link may be hidden when this view is served
           ## through an API to partner sites (such as marketing sites or blogs),
           ## which are not technically powered by Open edX.
           % if not hide_openedx_link:
             <div class="footer-about-openedx">
-              <p>
-                
                 <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
                   <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="140" />
                 </a>
                 <a href="https://climateireland.ie" rel="noopener" target="_blank">
                   <img src="${static.url('images/logo.png')}" width="140" />
                 </a>
-              </p>
             </div>
           % endif
         </div>
 
       </div>
+    </div>
     </footer>
   </div>
 % if include_dependencies:
