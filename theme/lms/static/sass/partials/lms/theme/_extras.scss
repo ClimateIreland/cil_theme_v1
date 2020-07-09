@@ -1,12 +1,10 @@
+
 /////////////////// General
-$content-height-offset: 25px; // DCasey July 2020: stick footer to bottom
-$content-padding-top: 50px;
+$content_padding_top: 24px;
 $content-padding-bottom: 10px;
 $header-height: 75px;
-$footer-height-xs: 297.5px;
-$footer-height-sm: 345px;
-$footer-height-md: 187px;
-$footer-height-lg: 202.4px;
+$footer-height: 202.4px;
+
 $cil-primary: #4a5569; // Should be same as $banner
 $cil-secondary: #5b7599;
 $cil-tertiary: #f2f3f4;
@@ -29,27 +27,17 @@ h1, h2, h3, h1 span, h2 span, h3 span {
 #content.content-wrapper.main-container {
   padding-left:0px;
   padding-right:0px;
-  margin-top: 0px;
+  // margin-top: 0px;
 }
 
 #content.content-wrapper {
-  min-height: calc(100vh - #{$header-height + $footer-height-lg - $content-padding-top - $content-padding-bottom - $content-height-offset});
-
   @include media-breakpoint-up(lg) {
     padding-top: $content-padding-top;
     padding-bottom: $content-padding-bottom;
-    margin-top: $header-height;
+    margin-top: 75px;
   }
-}
-
-.view-in-course.view-instructordash #content.main-container,
-.discussion #content.main-container,
-.view-profile  #content.main-container{
-  @include media-breakpoint-up(lg) {
-    padding-top: $content-padding-top;
-    padding-bottom: $content-padding-bottom;
-    margin-top: $header-height;
-  }
+  // min-height: calc(100vh - #{$header-height + $content-padding-top + $content-padding-bottom + $footer-height}); // sticky footer
+  min-height: calc(100vh - #{$header-height + $footer-height}); // sticky footer
 }
 
 body.view-profile .profile-self .wrapper-profile-field-account-privacy {
@@ -61,6 +49,10 @@ body.view-profile .profile-self .wrapper-profile-field-account-privacy {
 
 %t-title {
   font-family: $font-family-title;
+}
+/////////////////// Login
+.login-register > .form-type > .form-wrapper > .toggle-form {
+  display:none;
 }
 
 /////////////////// Header
@@ -309,6 +301,10 @@ header.global-header {
 // Course Overview
 .vertical-title {
   color: $primary;
+}
+
+.course-sidebar{
+  display: none;
 }
 
 // DCasey June 2020: scroll was creating grey bar 
