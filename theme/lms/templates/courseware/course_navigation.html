@@ -35,7 +35,7 @@ if course is not None:
 
 % if disable_tabs is UNDEFINED or not disable_tabs:
     <%
-    tab_list = get_course_tab_list(request, course)
+    tab_list = get_course_tab_list(request.user, course)
     %>
 
 
@@ -73,28 +73,30 @@ if course is not None:
             <div class="row">
                 <div class="col-md-3">
                     <div>
-                        <a target="_blank" href="http://caro.ie/"><img class="cilt-nav-designed-by-img" src="${static.url('images/CARO_logo.png')}" alt="CARO"></a>
-                        
+                        <a target="_blank" href="http://caro.ie/"><img class="cilt-nav-designed-by-img"
+                                src="${static.url('images/CARO_logo.png')}" alt="CARO"></a>
+
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                            <a target="_blank" href="https://www.lgma.ie/en/ccma"> <img class="cilt-nav-designed-by-img" src="${static.url('images/CCMA_STRAP_RGB.png')}"
-                                alt="LGMA"></a>
-                       
+                        <a target="_blank" href="https://www.lgma.ie/en/ccma"> <img class="cilt-nav-designed-by-img"
+                                src="${static.url('images/CCMA_STRAP_RGB.png')}" alt="LGMA"></a>
+
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                            <a target="_blank" href="https://www.lgma.ie/en"><img class="cilt-nav-designed-by-img" src="${static.url('images/LGMA_CMYK.png')}" alt="LGMA"></a>
-                        
+                        <a target="_blank" href="https://www.lgma.ie/en"><img class="cilt-nav-designed-by-img"
+                                src="${static.url('images/LGMA_CMYK.png')}" alt="LGMA"></a>
+
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div>
-                            <a target="_blank" href="https://www.climateireland.ie/"><img class="cilt-nav-designed-by-img" src="${static.url('images/Climate-Ireland-Logo-RGB.png')}"
-                                alt="Climate Ireland"></a>
-                        
+                        <a target="_blank" href="https://www.climateireland.ie/"><img class="cilt-nav-designed-by-img"
+                                src="${static.url('images/Climate-Ireland-Logo-RGB.png')}" alt="Climate Ireland"></a>
+
                     </div>
                 </div>
             </div>
