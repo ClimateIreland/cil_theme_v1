@@ -1,0 +1,27 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("About")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("About")}</%block> Climate Ireland Learning
+        </h1>
+        <p>
+            Climate Ireland Learning is designed, developed and maintaned by <a href="https://www.climateireland.ie">Climate Ireland</a> 
+            to provide courses on climate change taylored for Irish learners.  
+        </p>
+        <p>
+               Launched in October 2020 with the roll out of the 'Local Authority Climate Action Training' course in partnership with 
+               the Climate Action Regional Offices (CARO), County and City Maangment Association (CCMA) and the Local Governemnt Management Agency (LGMA).
+               The course increases awareness of all Local Authority staff of the challenges and opportunities posed by climate change, the role and actions being taking by the Local Government Sector and the role of the individual Local Authority Staff.
+                The course was developed in accordance with the Local Authority Climate Action Training Plan and in response to Action 150 of the Climate Action Plan.
+
+            </p>
+
+
+                
+    </section>
+</main>
