@@ -42,7 +42,7 @@ if course is not None:
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-12 col-md-6 col-lg-7">
             <nav class="navbar course-tabs pb-0 navbar-expand" aria-label="${_('Course')}">
                 <ul class="navbar-nav mr-auto">
                     % for tab in tab_list:
@@ -66,37 +66,36 @@ if course is not None:
                 </ul>
             </nav>
         </div>
-        <div class="col-md-6 d-none d-md-block">
+        <div class="col-md-6 col-lg-5 d-none d-md-block">
 
             <div class="row">
 
-                <div class="col-md-3">
-                    <div>
-                        <a target="_blank" href="http://caro.ie/"><img class="cilt-nav-designed-by-img"
+                <div class="col-md-3 my-auto">
+                    
+                        <a  target="_blank" href="http://caro.ie/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/CARO_logo.png')}" alt="CARO"></a>
 
-                    </div>
                 </div>
-                <div class="col-md-3">
-                    <div>
-                        <a target="_blank" href="https://www.lgma.ie/en/ccma"> <img class="cilt-nav-designed-by-img"
+                <div class="col-md-3 my-auto">
+                    
+                        <a  target="_blank" href="https://www.lgma.ie/en/ccma"> <img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/CCMA_STRAP_RGB.png')}" alt="LGMA"></a>
 
-                    </div>
+             
                 </div>
-                <div class="col-md-3">
-                    <div>
-                        <a target="_blank" href="https://www.lgma.ie/en"><img class="cilt-nav-designed-by-img"
-                                src="${static.url('images/LGMA_CMYK.png')}" alt="LGMA"></a>
+                <div class="col-md-3 my-auto">
+                    
+                        <a  target="_blank" href="https://www.lgma.ie/en"><img class="cilt-nav-designed-by-img"
+                                src="${static.url('images/LGMA_logo.png')}" alt="LGMA"></a>
 
-                    </div>
+             
                 </div>
-                <div class="col-md-3">
-                    <div>
-                        <a target="_blank" href="https://www.climateireland.ie/"><img class="cilt-nav-designed-by-img"
+                <div class="col-md-3 my-auto">
+                    
+                        <a  target="_blank" href="https://www.climateireland.ie/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/Climate-Ireland-Logo-RGB.png')}" alt="Climate Ireland"></a>
 
-                    </div>
+             
                 </div>
             </div>
         </div>

@@ -204,11 +204,16 @@ header.global-header {
 .dashboard .main-container .my-courses {
   .course .details .wrapper-course-image {
     width:50%;
+    max-height:350px;
+  }
+  .course-image {
     max-height:300px;
   }
   .listing-courses .course-item{
     background-color: $cil-tertiary;
   }
+
+
 }
 
 
@@ -314,15 +319,15 @@ header.global-header {
   background-color: white;
 }
 
-.cilt-nav-designed-by-label {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
+// .cilt-nav-designed-by-label {
+//   font-size: 14px;
+//   margin-bottom: 5px;
+// }
 
 .cilt-nav-designed-by-img {
   width: 100%;
   max-width: 120px;
-  margin-bottom: 5px
+  // margin-bottom: 5px
 }
 
 .content-wrapper .course-tabs .nav-item .nav-link {
@@ -353,6 +358,10 @@ header.global-header {
   padding: 0px!important; // DCasey July 2020: set from  multiple places i.e. lms-course.css
   border-top: solid;
   border-color: $primary;
+
+  footer {
+    max-width: none;
+  }
 
   .cilt-footer-upper {
     background-color: $cil-tertiary;
