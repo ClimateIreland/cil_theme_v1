@@ -1,6 +1,7 @@
 <%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
+<!-- <%namespace file='./main.html' import="login_query"/> -->
 <%!
 from django.utils.translation import ugettext as _
 from django.urls import reverse
@@ -20,9 +21,30 @@ from openedx.core.djangolib.markup import HTML, Text
                 <%include file="index_overlay.html" />
               % endif
             </div>
-            <div class="cilt-under-construction-wrapper">
-              <img src="${static.url('images/construction_blue.png')}">
+
+            <div class="cilt-index-intro-container">
+                <p>
+                    Climate Ireland Learning is designed, developed and maintained by <a href="https://www.climateireland.ie">Climate Ireland</a> 
+                    to provide courses on climate change tailored for Irish learners.  
+                </p>
+
+                <p>
+                    Currently our courses are by invite only. If you have been invited to take part in a course, a registration link would have been email to you.
+                </p>
+                <p>
+                    If you are already registered please sign in.
+                </p>
+     
+<div class="text-center">
+                <a class="sign-in-btn btn cilt-index-sign-in-btn" href="/login${login_query()}">${_("Sign in")}</a>
+              </div>
+
+
             </div>
+  
+            <!-- <div class="cilt-under-construction-wrapper">
+              <img src="${static.url('images/construction_blue.png')}">
+            </div> -->
             <!-- 
               % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
               <div class="course-search">

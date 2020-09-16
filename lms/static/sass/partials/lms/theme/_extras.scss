@@ -13,7 +13,10 @@ $cil-tertiary: #f2f3f4;
 body, body.view-profile {
   min-height: initial;
   background-color: white;
+  line-height: 1.25em;
+  letter-spacing: 0.05em;
 }
+
 
 %btn-pl-default-base {
   border-radius: 5;
@@ -326,9 +329,16 @@ header.global-header {
 
 .cilt-nav-designed-by-img {
   width: 100%;
-  max-width: 120px;
+  max-width: 200px;
   // margin-bottom: 5px
 }
+
+.cilt-course-icon {
+  height: 80px;
+  width: auto;
+  margin-top: -20px;
+}
+
 
 .content-wrapper .course-tabs .nav-item .nav-link {
   color: $primary !important;
@@ -416,3 +426,28 @@ header.global-header {
     margin-right: auto;
   }
 }
+
+.cilt-index-intro-container {
+  border: solid $primary 1px;
+  background-color: $cil-tertiary;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+
+  .cilt-index-sign-in-btn {
+    background-color: $primary;
+    color: white;
+    margin: 30px;
+    height: 50px;
+    width: 150px;
+    font-size: 1.2em;
+    border-radius: 5px;
+
+  }
+
+  .cilt-index-sign-in-btn:hover{
+    background-color: white;
+    color:  $primary;
+    border-color:  $primary;
+  }
