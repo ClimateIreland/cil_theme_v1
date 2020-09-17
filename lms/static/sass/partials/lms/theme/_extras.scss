@@ -427,9 +427,9 @@ header.global-header {
 }
 
 .cilt-index-intro-container {
-  border: solid $primary 1px;
+  // border: solid $primary 1px;
   background-color: $cil-tertiary;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 15px;
 }
 
@@ -442,7 +442,6 @@ header.global-header {
     width: 150px;
     font-size: 1.2em;
     border-radius: 5px;
-
   }
 
   .cilt-index-sign-in-btn:hover{

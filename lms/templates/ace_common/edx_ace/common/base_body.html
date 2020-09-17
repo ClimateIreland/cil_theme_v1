@@ -22,7 +22,7 @@
 
 
 {% for image_src in channel.tracker_image_sources %}
-    <img src="https://learn.climateireland.ie/static/cil_theme_v1/images/Climate-Ireland-Logo-RGB.96e0f46fbd28.png" alt="" role="presentation" aria-hidden="true" />
+    <img src="${static.url('images/Climate Ireland Learning_Navy_small.png')}" alt="" role="presentation" aria-hidden="true" />
 {% endfor %}
 
 {% google_analytics_tracking_pixel %}
@@ -63,7 +63,7 @@
                     <tr>
                         <td width="70">
                             <a href="{% with_link_tracking homepage_url %}"><img
-                                    src="https://learn.climateireland.ie/static/cil_theme_v1/images/Climate-Ireland-Logo-RGB.96e0f46fbd28.png"
+                                    src="${static.url('images/Climate Ireland Learning_Navy_small.png')}"
                                     alt="{% blocktrans %}Go to {{ platform_name }} Home Page{% endblocktrans %}"/></a>
                         </td>
                         <td align="right" style="text-align: {{ LANGUAGE_BIDI|yesno:"left,right" }};">
@@ -174,7 +174,8 @@
                             &copy; {% now "Y" %} {{ platform_name }}, {% trans "All rights reserved" %}.<br/>
                             <br/>
                             {% trans "Our mailing address is" %}:<br/>
-                            {{ contact_mailing_address }}
+                            <!-- {{ contact_mailing_address }} -->
+                            learn@climateireland.ie
                         </td>
                     </tr>
                 </table>
