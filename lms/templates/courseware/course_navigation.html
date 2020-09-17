@@ -38,11 +38,9 @@ if course is not None:
     tab_list = get_course_tab_list(request.user, course)
     %>
 
-
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-5 col-lg-4">
+        <div class="col-md-7 col-lg-4 my-auto">
             <nav class="navbar course-tabs pb-0 navbar-expand" aria-label="${_('Course')}">
                 <ul class="navbar-nav mr-auto">
                     % for tab in tab_list:
@@ -70,10 +68,10 @@ if course is not None:
             <img class="cilt-course-icon"
                                 src="${static.url('images/LA CLIMATE ACTION_edited-RED_ICON.png')}" alt="Course Icon">
         </div> -->
-        <div class="col-md-7 col-lg-8 d-none d-md-block">
+        <div class="col-md-5 col-lg-8 d-none d-md-block my-auto">
 
             <div class="row">
-                    <div class="col-md-2 offset-md-2 my-auto  text-center p-0">
+                    <div class="col-md-2 offset-md-2 my-auto text-center p-0">
                     
                             <a  target="_blank" href="https://learn.climateireland.ie/courses/course-v1:ClimateIreland+LA101+2020_T4/course/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/LA CLIMATE ACTION_edited-RED (002).png')}" alt="Course Icon"></a>

@@ -329,14 +329,8 @@ header.global-header {
 
 .cilt-nav-designed-by-img {
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   // margin-bottom: 5px
-}
-
-.cilt-course-icon {
-  height: 80px;
-  width: auto;
-  margin-top: -20px;
 }
 
 
@@ -346,6 +340,11 @@ header.global-header {
  
 .hd.hd-2.unit-title {
   color: $banner;
+}
+
+.course-wrapper .course-content .vert-mod .vert, .course-wrapper .courseware-results-wrapper .vert-mod .vert {
+  border-bottom: none;
+  padding: 0 0 0
 }
 
 // Account settings
