@@ -449,3 +449,36 @@ header.global-header {
     color:  $primary;
     border-color:  $primary;
   }
+
+
+  /////////////////////////////////////////////// 
+  .cilt-warning-container {
+    background-color: #b20610;
+    color: white;
+    position: fixed;
+    width:100%;
+    top: 66px;
+  }
+  .cilt-warning {
+    border-bottom: 1px solid white;
+    display: none;
+    padding: 10px 2%;
+    padding-bottom: 5px;
+  }
+  .cilt-warning-a { 
+    color: white !important;
+    text-decoration: underline !important;
+  }
+
+  .cilt-warning-a:hover { 
+    color: white !important;
+    text-decoration: underline !important;
+  }
+
+
+  /* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 768px) {
+  .cilt-warning-screen-size {
+    display: block;
+  }
+}

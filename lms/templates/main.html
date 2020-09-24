@@ -95,8 +95,8 @@ from pipeline_mako import render_require_js_path_overrides
   <link rel="icon" type="image/x-icon" href="${static.url(static.get_value('favicon_path', settings.FAVICON_PATH))}" />
 
   <!-- DCasey Aug-2020: include bootstrap throughout, by removing an if statement-->
-  ## xss-lint: disable=mako-invalid-js-filter
-  <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
+  <!-- ## xss-lint: disable=mako-invalid-js-filter
+  <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script> -->
   <!-- DCasey Aug-2020: include bootstrap css, unless it's already included from webpack-->
   % if not uses_bootstrap:
   <link rel="stylesheet" href="${static.url('css/bootstrap/lms-main.css')}" type="text/css" media="all" />
@@ -126,10 +126,16 @@ from pipeline_mako import render_require_js_path_overrides
 
   <%static:webpack entry="commons"/>
 
-  % if uses_bootstrap:
+
+    ## % if uses_bootstrap:
     ## xss-lint: disable=mako-invalid-js-filter
-    <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
-  % endif
+    <!-- <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script> -->
+    ##% endif 
+
+
+  ## xss-lint: disable=mako-invalid-js-filter
+  <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
+
 
   <script>
     window.baseUrl = "${settings.STATIC_URL | n, js_escaped_string}";
@@ -202,6 +208,19 @@ from pipeline_mako import render_require_js_path_overrides
         <%include file="/preview_menu.html" />
     % endif
 
+    <!-- dancasey-ie 2020Sept 24 include warnings -->
+    <div class="cilt-warning-container">
+    <div class="cilt-warning cilt-warning-screen-size">Warning: Your screen is too narrow. We strongly recommend using a screen >768px.</div>
+    <div class="cilt-warning cilt-warning-ie">
+      Warning: Your browser is not fully supported. We strongly recommend using 
+       <a class="cilt-warning-a" href="https://www.google.com/chrome" rel="noopener" target="_blank"> Chrome</a>,
+       <a class="cilt-warning-a" href="http://www.mozilla.org/firefox" rel="noopener" target="_blank"> Firefox</a> or
+       <a class="cilt-warning-a" href="https://www.microsoft.com/edge" rel="noopener" target="_blank"> Edge.</a>
+</div>
+</div>
+    
+      <!-- dancasey-ie 2020Sept end -->
+
     <%include file="/page_banner.html" />
 
     <div class="marketing-hero"><%block name="marketing_hero"></%block></div>
@@ -227,6 +246,41 @@ from pipeline_mako import render_require_js_path_overrides
   <script type="text/javascript" src="${static.url('js/header/header.js')}"></script>
   <%static:optional_include_mako file="body-extra.html" is_theming_enabled="True" />
   <script type="text/javascript" src="${static.url('js/src/jquery_extend_patch.js')}"></script>
+
+  
+  <!-- dancasey-ie 2020Sept17 -->
+  ## xss-lint: disable=mako-invalid-js-filter
+  <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
+    <!-- dancasey-ie 2020Sept17 end -->
+  
+      <!-- dancasey-ie 2020Sept24 -->
+  <script type="text/javascript">
+  // Internet Explorer 6-11
+   var isIE = /*@cc_on!@*/false || !!document.documentMode;
+   // Chrome 1 - 79
+   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+   // Firefox 1.0+
+   var isFirefox = typeof InstallTrigger !== 'undefined';
+   // Edge 20+
+   var isEdge = !isIE && !!window.StyleMedia;
+
+   if (isIE) {
+     console.log("Internet Explorer")
+    var warningIE = document.getElementsByClassName('cilt-warning-ie')[0];
+    console.log(warningIE)
+    warningIE.style.display = 'block';
+   }
+   if (isChrome) {
+     console.log("Chrome")
+   } 
+   if (isFirefox) {
+     console.log("Firefox")
+   } 
+   if (isEdge) {
+     console.log("Edge")
+   } 
+
+  </script>
 </body>
 </html>
 
