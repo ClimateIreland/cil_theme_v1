@@ -209,15 +209,17 @@ from pipeline_mako import render_require_js_path_overrides
     % endif
 
     <!-- dancasey-ie 2020Sept 24 include warnings -->
+    % if course:
     <div class="cilt-warning-container">
-    <div class="cilt-warning cilt-warning-screen-size">Warning: Your screen is too narrow. We strongly recommend using a screen >768px.</div>
-    <div class="cilt-warning cilt-warning-ie">
-      Warning: Your browser is not fully supported. We strongly recommend using 
-       <a class="cilt-warning-a" href="https://www.google.com/chrome" rel="noopener" target="_blank"> Chrome</a>,
-       <a class="cilt-warning-a" href="http://www.mozilla.org/firefox" rel="noopener" target="_blank"> Firefox</a> or
-       <a class="cilt-warning-a" href="https://www.microsoft.com/edge" rel="noopener" target="_blank"> Edge.</a>
-</div>
-</div>
+      <div class="cilt-warning cilt-warning-screen-size">Warning: Your screen is too narrow. We strongly recommend using a screen >768px.</div>
+      <div class="cilt-warning cilt-warning-ie">
+        Warning: Your browser is not fully supported. We strongly recommend using 
+        <a class="cilt-warning-a" href="https://www.google.com/chrome" rel="noopener" target="_blank"> Chrome</a>,
+        <a class="cilt-warning-a" href="http://www.mozilla.org/firefox" rel="noopener" target="_blank"> Firefox</a> or
+        <a class="cilt-warning-a" href="https://www.microsoft.com/edge" rel="noopener" target="_blank"> Edge.</a>
+      </div>
+     </div>
+     % endif
     
       <!-- dancasey-ie 2020Sept end -->
 
