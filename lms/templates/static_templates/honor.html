@@ -1,0 +1,45 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Terms of Service")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("Terms of Service")}</%block>
+        </h1>
+        <p>Below is Climate Ireland Learning's Terms of Service. To make this content more readable, we have
+                broken it into sections as follows.</p>
+
+<ul class="">
+                    <li><a href="#id1">Copyright</a></li>
+                    <li><a href="#id2">Disclaimer</a></li>
+                    <li><a href="#id3">Linking to Climate Ireland Learning</a></li>
+                    <li><a href="#id4">Links from Climate Ireland to Other Websites</a></li>
+                </ul>
+
+<h2 class="text-center" id="id1"><strong>Copyright</strong></h2>
+
+<p>Reuse of materials on this website is authorised, provided the source is acknowledged. 
+   You are not permitted to use the material for commercial purposes. 
+   Reproduction of the Climate Ireland and Climate Ireland Learning logo is only permitted with express permission – 
+   please contact us to request usage details. </p>
+
+<h2 class="text-center" id="id2"><strong>Disclaimer</strong></h2>
+
+<p>This website is provided for information purposes only. Climate Ireland Learning makes every effort to ensure that the information is accurate and up-to-date. 
+    However, Climate Ireland Learning is not liable for any damages arising out of, or in connection with the use of Climate Ireland. </p>
+
+<h2 class="text-center" id="id3"><strong>Linking to Climate Ireland Learning</strong></h2>
+
+<p> You are permitted to link to any pages on this website.
+     It is important to note however that the site will be updated and URLs may change, resulting in broken links. </p>
+
+<h2 class="text-center" id="id4"><strong>Links from Climate Ireland Learning to Other Websites</strong></h2>
+
+<p>This website contains links to websites operated by other parties. Climate Ireland does not control these websites 
+    and is not responsible for their content and performance, not does it endorse any such material on such websites. </p>
+                
+    </section>
+</main>
