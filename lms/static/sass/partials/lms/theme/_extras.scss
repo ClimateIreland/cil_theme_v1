@@ -211,12 +211,16 @@ header.global-header {
   }
   .course-image {
     max-height:300px;
+    padding:10px;
   }
   .listing-courses .course-item{
     background-color: $cil-tertiary;
   }
 
 
+}
+.dashboard .main-container .my-courses .listing-courses .course-item {
+  padding-bottom:0px;
 }
 
 
@@ -370,7 +374,7 @@ header.global-header {
 
   footer {
     max-width: none;
-  }
+
 
   .cilt-footer-upper {
     background-color: $cil-tertiary;
@@ -404,10 +408,22 @@ header.global-header {
       max-width: 440px; 
     }
 
-    .footer-about-openedx{
-      text-align:right
+    .cilt-about-openedx-img {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      padding: 5px;
+    }
+
+ .footer-about-openedx {
+      text-align:center;
+      // float:left;
     }
   }
+}
+}
+.wrapper-footer footer .footer-about-openedx{
+  float:none!important;
 }
 
 /////////////////////////////////////////////// Figures
