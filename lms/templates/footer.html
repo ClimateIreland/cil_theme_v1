@@ -48,7 +48,7 @@
     </div>
     <div class="container-fluid cilt-footer-lower">
       <div class="row">
-        <div class="col-6 col-sm-12 col-md-6">
+        <div class="col-6 col-sm-12 col-md-6 col-lg-5">
           
           <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
             <ul class="navbar-nav">
@@ -66,7 +66,7 @@
           <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
   
         </div>
-        <div class="col-6 col-sm-12 col-md-6">
+        <div class="col-6 col-sm-12 col-md-6 offset-lg-2 col-lg-5">
           ## Please leave this link and use one of the logos provided
           ## The OpenEdX link may be hidden when this view is served
           ## through an API to partner sites (such as marketing sites or blogs),
