@@ -1,3 +1,5 @@
+<!-- {% extends 'ace_common/edx_ace/common/base_body.html' %} -->
+
 {% load i18n %}
 {% load ace %}
 
@@ -20,14 +22,13 @@
     {% block preview_text %}{% endblock %}
 </div>
 
-
 {% for image_src in channel.tracker_image_sources %}
-    <img src="${static.url('images/Climate Ireland Learning_Navy_small.png')}" alt="" role="presentation" aria-hidden="true" />
+    <img src="{image_src}" alt="" role="presentation" aria-hidden="true" />
 {% endfor %}
 
 {% google_analytics_tracking_pixel %}
 
-<div bgcolor="#f2f3f4" lang="{{ LANGUAGE_CODE|default:"en" }}" dir="{{ LANGUAGE_BIDI|yesno:"rtl,ltr" }}" style="
+<div bgcolor="#f5f5f5" lang="{{ LANGUAGE_CODE|default:"en" }}" dir="{{ LANGUAGE_BIDI|yesno:"rtl,ltr" }}" style="
     margin: 0;
     padding: 0;
     min-width: 100%;
@@ -46,8 +47,7 @@
     <![endif]-->
 
     <!-- CONTENT -->
-    <!-- <p>/home/dan/ClimateIreland/CI-Learning/tutor/env/build/openedx/themes/cil_theme_v1/lms/templates/ace_common/edx_ace/common/base_body.html</p> -->
-    <table class="content" role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f3f4" width="100%" style="
+    <table class="content" role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#f5f5f5" width="100%" style="
         font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 1em;
         line-height: 1.5;
@@ -56,22 +56,24 @@
     ">
         <tr>
             <!-- HEADER -->
+            <!-- /home/dan/ClimateIreland/CI-Learning/tutor/env/build/openedx/themes/cil_theme_v1/common/templates/students/edx_ace/accountactivation/email/body.html -->
             <td class="header" style="
                 padding: 20px;
             ">
+                {% block header %}
                 <table role="presentation" width="100%" align="left" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td width="70">
-                              <!--  <h2>/home/dan/ClimateIreland/CI-Learning/tutor/env/build/openedx/themes/cil_theme_v1/lms/templates/ace_common/edx_ace/common/base_body.html</h2> -->
                             <a href="{% with_link_tracking homepage_url %}"><img
-                                    src="${static.url('images/Climate Ireland Learning_Navy_small.png')}"
-                                    alt="{% blocktrans %}Go to {{ platform_name }} Home Page{% endblocktrans %}"/></a>
+                                    src="https://learn.climateireland.ie/static/cil_theme_v1/images/logo.6990bb1ed9d1.png" width="70"
+                                    height="30" alt="{% filter force_escape %}{% blocktrans %}Go to {{ platform_name }} Home Page{% endblocktrans %}{% endfilter %}"/></a>
                         </td>
                         <td align="right" style="text-align: {{ LANGUAGE_BIDI|yesno:"left,right" }};">
-                            <a class="login" href="{% with_link_tracking dashboard_url %}" style="color: #4d769c;">{%  trans "Sign In" %}</a>
+                            <a class="login" href="{% with_link_tracking dashboard_url %}" style="color: #005686;">{%  trans "Sign In" %}</a>
                         </td>
                     </tr>
                 </table>
+                {% endblock %}
             </td>
         </tr>
 
@@ -98,7 +100,7 @@
                                         <td height="32" width="42">
                                             <a href="{{ social_media_urls.linkedin|safe }}">
                                                 <img src="https://media.sailthru.com/595/1k1/8/o/599f354ec70cb.png"
-                                                     width="32" height="32" alt="{% blocktrans %}{{ platform_name }} on LinkedIn{% endblocktrans %}"/>
+                                                     width="32" height="32" alt="{% filter force_escape %}{% blocktrans %}{{ platform_name }} on LinkedIn{% endblocktrans %}{% endfilter %}"/>
                                             </a>
                                         </td>
                                     {% endif %}
@@ -106,7 +108,7 @@
                                         <td height="32" width="42">
                                             <a href="{{ social_media_urls.twitter|safe }}">
                                                 <img src="https://media.sailthru.com/595/1k1/8/o/599f354d9c26e.png"
-                                                     width="32" height="32" alt="{% blocktrans %}{{ platform_name }} on Twitter{% endblocktrans %}"/>
+                                                     width="32" height="32" alt="{% filter force_escape %}{% blocktrans %}{{ platform_name }} on Twitter{% endblocktrans %}{% endfilter %}"/>
                                             </a>
                                         </td>
                                     {% endif %}
@@ -114,7 +116,7 @@
                                         <td height="32" width="42">
                                             <a href="{{ social_media_urls.facebook|safe }}">
                                                 <img src="https://media.sailthru.com/595/1k1/8/o/599f355052c8e.png"
-                                                     width="32" height="32" alt="{% blocktrans %}{{ platform_name }} on Facebook{% endblocktrans %}"/>
+                                                     width="32" height="32" alt="{% filter force_escape %}{% blocktrans %}{{ platform_name }} on Facebook{% endblocktrans %}{% endfilter %}"/>
                                             </a>
                                         </td>
                                     {% endif %}
@@ -122,7 +124,7 @@
                                         <td height="32" width="42">
                                             <a href="{{ social_media_urls.google_plus|safe }}">
                                                 <img src="https://media.sailthru.com/595/1k1/8/o/599f354fc554a.png"
-                                                     width="32" height="32" alt="{% blocktrans %}{{ platform_name }} on Google Plus{% endblocktrans %}"/>
+                                                     width="32" height="32" alt="{% filter force_escape %}{% blocktrans %}{{ platform_name }} on Google Plus{% endblocktrans %}{% endfilter %}"/>
                                             </a>
                                         </td>
                                     {% endif %}
@@ -130,7 +132,7 @@
                                         <td height="32" width="42">
                                             <a href="{{ social_media_urls.reddit|safe }}">
                                                 <img src="https://media.sailthru.com/595/1k1/8/o/599f354e326b9.png"
-                                                     width="32" height="32" alt="{% blocktrans %}{{ platform_name }} on Reddit{% endblocktrans %}"/>
+                                                     width="32" height="32" alt="{% filter force_escape %}{% blocktrans %}{{ platform_name }} on Reddit{% endblocktrans %}{% endfilter %}"/>
                                             </a>
                                         </td>
                                     {% endif %}
@@ -144,14 +146,14 @@
                             {% if mobile_store_urls.apple %}
                                 <a href="{{ mobile_store_urls.apple|safe }}" style="text-decoration: none">
                                     <img src="https://media.sailthru.com/595/1k1/6/2/5931cfbba391b.png"
-                                         alt="{% trans "Download the iOS app on the Apple Store" %}"
+                                         alt="{% trans "Download the iOS app on the Apple Store" as tmsg %}{{ tmsg | force_escape }}"
                                          width="136" height="50" style="margin-{{ LANGUAGE_BIDI|yesno:"left,right" }}: 10px"/>
                                 </a>
                             {% endif %}
                             {% if mobile_store_urls.google %}
                                 <a href="{{ mobile_store_urls.google|safe }}" style="text-decoration: none">
                                     <img src="https://media.sailthru.com/595/1k1/6/2/5931cf879a033.png"
-                                         alt="{% trans "Download the Android app on the Google Play Store" %}"
+                                         alt="{% trans "Download the Android app on the Google Play Store" as tmsg %}{{ tmsg | force_escape }}"
                                          width="136" height="50"/>
                                 </a>
                             {% endif %}
@@ -162,8 +164,8 @@
                         <td style="padding-bottom: 20px;">
                             {% for action_link_url, action_link_text in channel.action_links %}
                                 <p>
-                                    <a href="{{ action_link_url }}" style="color: #4d769c">
-                                        <font color="#4d769c"><b>{{ action_link_text }}</b></font>
+                                    <a href="{{ action_link_url }}" style="color: #005686">
+                                        <font color="#005686"><b>{{ action_link_text }}</b></font>
                                     </a>
                                 </p>
                             {% endfor %}
@@ -172,13 +174,19 @@
                     <tr>
                         <!-- COPYRIGHT -->
                         <td>
-                            &copy; {% now "Y" %} {{ platform_name }}, {% trans "All rights reserved" %}.<br/>
+                            &copy; {% now "Y" %} {{ platform_name }}, {% trans "All rights reserved" as tmsg %}{{ tmsg | force_escape }}.<br/>
                             <br/>
-                            {% trans "Our mailing address is" %}:<br/>
-                            <!-- {{ contact_mailing_address }} -->
-                            learn@climateireland.ie
+                            {% trans "Our mailing address is" as tmsg %}{{ tmsg | force_escape }}:<br/>
+                            {{ contact_mailing_address }}
                         </td>
                     </tr>
+                    {% if unsubscribe_url %}
+                        <tr>
+                            <td>
+                                <a href="{% with_link_tracking unsubscribe_url %}">{% trans "Unsubscribe from these emails." as tmsg %}{{ tmsg | force_escape }}</a>
+                            </td>
+                        </tr>
+                    {% endif %}
                 </table>
             </td>
         </tr>
@@ -195,3 +203,76 @@
 {# Debug info that is not user-visible #}
 <span id="ace-message-id" style="display:none;">{{ message.log_id }}</span>
 <span id="template-revision" style="display:none;">{{ template_revision }}</span>
+
+<!--End of base_body-->
+
+{% load django_markup %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<!--/home/dan/ClimateIreland/CI-Learning/tutor/env/build/openedx/themes/cil_theme_v1/common/templates/students/edx_ace/accountactivation/email/body.html-->
+<table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation">
+{% if route_enabled %}
+    <tr>
+        <td>
+            <p style="color: rgba(0,0,0,.75);">
+                {% filter force_escape %}
+                    {% blocktrans %}This is a routed Account Activation email for {{ routed_user }} ({{ routed_user_email }}): {{ routed_profile_name }}{% endblocktrans %}
+                {% endfilter %}
+                <br />
+            </p>
+        </td>
+    </tr>
+{% endif %}
+    <tr>
+        <td>
+            <h1>
+                {% trans "Account Activation" as header_msg %}{{ header_msg | force_escape }}
+            </h1>
+            <p style="color: rgba(0,0,0,.75);">
+                {% filter force_escape %}
+                    {% blocktrans %}You're almost there! Use the link below to activate your account to access engaging, high-quality {{ platform_name }} courses. Note that you will not be able to log back into your account until you have activated it.{% endblocktrans %}
+                {% endfilter %}
+                <br />
+            </p>
+
+            {% filter force_escape %}
+                {% blocktrans asvar course_cta_text %}Activate Your Account{% endblocktrans %}
+            {% endfilter %}
+            {% include "ace_common/edx_ace/common/return_to_course_cta.html" with course_cta_text=course_cta_text course_cta_url=confirm_activation_link %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="color: rgba(0,0,0,.75);">
+                {% filter force_escape %}
+                    {% blocktrans %}Enjoy learning with {{ platform_name }}.{% endblocktrans %}
+                {% endfilter %}
+                <br />
+            </p>
+        </td>
+    </tr>
+        <td>
+            <p style="color: rgba(0,0,0,.75);">
+                {% blocktrans trimmed asvar assist_msg %}
+                If you need help, please use our web form at {start_anchor_web}{{ support_url }}{end_anchor} or email {start_anchor_email}{{ support_email }}{end_anchor}.
+                {% endblocktrans %}
+                {% interpolate_html assist_msg start_anchor_web='<a href="'|add:support_url|add:'">'|safe start_anchor_email='<a href="mailto:'|add:support_email|add:'">'|safe end_anchor='</a>'|safe %}
+                <br />
+            </p>
+        </td>
+    <tr>
+
+    </tr>
+    <tr>
+        <td>
+            <p style="color: rgba(0,0,0,.75);">
+                {% filter force_escape %}
+                    {% blocktrans %}This email message was automatically sent by {{ lms_url }} because someone attempted to create an account on {{ platform_name }} using this email address.{% endblocktrans %}
+                {% endfilter %}
+                <br />
+            </p>
+        </td>
+    </tr>
+</table>
+{% endblock %}
