@@ -41,7 +41,7 @@ if course is not None:
 % if 'LA001' in str(course) or 'CS000' in str(course):
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-7 col-lg-4 my-auto">
+        <div class="col-md-6 col-lg-5 my-auto pl-0 pr-0">
             <nav class="navbar course-tabs pb-0 navbar-expand" aria-label="${_('Course')}">
                 <ul class="navbar-nav mr-auto">
                     % for tab in tab_list:
@@ -65,14 +65,10 @@ if course is not None:
                 </ul>
             </nav>
         </div>
-        <!-- <div class="col-lg-1 d-none d-lg-block">
-            <img class="cilt-course-icon"
-                                src="${static.url('images/LA CLIMATE ACTION_edited-RED_ICON.png')}" alt="Course Icon">
-        </div> -->
-        <div class="col-md-5 col-lg-8 d-none d-md-block my-auto">
+        <div class="col-md-6 col-lg-7 d-none d-md-block my-auto">
 
             <div class="row">
-                    <div class="col-md-2 offset-md-2 my-auto text-center p-0">
+                    <div class="col-md-2 my-auto text-center p-0">
                     
                             <a  target="_blank" href="https://learn.climateireland.ie/courses/course-v1:ClimateIreland+LA101+2020_T4/course/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/LA CLIMATE ACTION_edited-RED (002).png')}" alt="Course Icon"></a>
@@ -80,32 +76,37 @@ if course is not None:
                     </div>
 
       
-                <div class="col-md-2 my-auto text-center">
+                <div class="col-md-2 my-auto text-center pl-3 pr-2">
                     
                         <a  target="_blank" href="https://www.lgma.ie/en/ccma"> <img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/CCMA_STRAP_RGB.png')}" alt="LGMA"></a>
 
              
                 </div>
-                <div class="col-md-2 my-auto text-center">
+                <div class="col-md-2 my-auto text-center pl-2 pr-2">
                     
                         <a  target="_blank" href="https://www.lgma.ie/en"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/LGMA_logo.png')}" alt="LGMA"></a>
 
              
                 </div>
-                <div class="col-md-2 my-auto text-center">
+                <div class="col-md-2 my-auto text-center pl-2 pr-2">
                     
                         <a  target="_blank" href="http://caro.ie/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/CARO_logo.png')}" alt="CARO"></a>
 
                 </div>
-                <div class="col-md-2 my-auto text-center">
+                <div class="col-md-2 my-auto text-center pl-2 pr-2">
+                    
+                    <a  target="_blank" href="https://www.lasntg.ie/"><img class="cilt-nav-designed-by-img"
+                            src="${static.url('images/lastntg-logo.png')}" alt="LASTNTG"></a>
+
+            </div>
+                <div class="col-md-2 my-auto text-center pl-2 pr-2">
                     
                         <a  target="_blank" href="https://www.climateireland.ie/"><img class="cilt-nav-designed-by-img"
                                 src="${static.url('images/Climate-Ireland-Logo-RGB.png')}" alt="Climate Ireland"></a>
 
-             
                 </div>
             </div>
         </div>
