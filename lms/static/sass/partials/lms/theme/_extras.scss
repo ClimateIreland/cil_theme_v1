@@ -47,6 +47,14 @@ body.view-profile .profile-self .wrapper-profile-field-account-privacy {
   margin-top: 0px;
 }
 
+.form-control {
+  color: #313131;
+}
+
+.form-control:focus {
+  color: #313131;
+}
+
 ////////////////// Fonts
 @import "fonts";
 
@@ -187,41 +195,54 @@ header.global-header {
 }
 
 ////////////////// Discover new
-.courses-container .courses .course .course-image {
-  .cover-image{
-    text-align: center;
-    height: 200px;
-  }
+.courses-container .courses .course {
+  min-height: 370px;
+  .course-image {
+    min-height: 200px;
+    .cover-image{
+      text-align: center;
+      vertical-align: middle;
+      display: inline;
+        img{
+            width: 100%;
+            height: auto;
+            padding: 10px
+        }
+    }
   .cover-image:before{
     text-align: center;
-    height: 200px;
+    vertical-align: middle;
+    display: inline;
   }
 }
-
-.courses-container .courses .course .course-image .cover-image img {
-  height: 100%;
-  width: auto;
-}
+  .course-info {
+    .course-title {
+    margin: 5px 0px 15px 0px
+}}}
 
 ////////////////// User dashboard /dashboard
 .dashboard .main-container .my-courses {
   .course .details .wrapper-course-image {
     width:50%;
-    max-height:350px;
+    max-height:220px;
+    text-align:center;
   }
   .course-image {
-    max-height:300px;
+    max-height:200px;
     padding:10px;
   }
   .listing-courses .course-item{
     background-color: $cil-tertiary;
+    padding-bottom:0px;
   }
-
-
+  .details {
+    min-height: 200px
+  }
 }
-.dashboard .main-container .my-courses .listing-courses .course-item {
-  padding-bottom:0px;
-}
+
+// .dashboard .main-container .my-courses .listing-courses .course-item {
+//   padding-bottom:0px;
+// }
 
 
 ////////////////// Course about page
@@ -374,6 +395,7 @@ header.global-header {
 
   footer {
     max-width: none;
+    width:100%!important;
 
 
   .cilt-footer-upper {
