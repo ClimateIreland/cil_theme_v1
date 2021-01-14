@@ -24,7 +24,18 @@ course_mode_class = course_mode if course_mode else ''
  .accomplishment-statement-lead{
     color: #4d4b4b;
     font-size: 1.125rem;
+    margin-bottom:5px!important
  }
+
+ .accomplishment-rendering .accomplishment-type {
+    margin-bottom: 10px;
+}
+
+ .accomplishment-statement{
+    margin-bottom:0px!important;
+    padding-bottom:0px!important;
+ }
+
 
  .accomplishment-type-label .hd-3 {
     color: #008801;
@@ -34,6 +45,10 @@ course_mode_class = course_mode if course_mode else ''
 
  .accomplishment-statement-detail .copy{
 
+ }
+
+ .accomplishment-rendering .accomplishment-summary{
+     margin-bottom: 10px!important;
  }
 
  .accomplishment-course-name{
@@ -49,6 +64,21 @@ color: #000;
 font-weight: 600;
 font-size: 2.5rem;
  }
+
+ .accomplishment-orgs {
+     margin-bottom: 5px!important;
+ }
+ .cilt-accredited-orgs > .organization-logo{
+     display: inline-block;
+     max-width:116px;
+     padding:5px;
+ }
+
+ .layout-accomplishment .accomplishment-orgs .organization-logo {
+    max-width: 140px;
+    max-height: 75px;
+}
+
 
 
 </style>
@@ -104,8 +134,12 @@ font-size: 2.5rem;
                         </span>
 
                         <!-- <span class="accomplishment-statement-detail copy">a course offered by Climate Ireland, in collaboration with Climate Action Regional Offices</span> -->
-                         <span class="accomplishment-statement-detail copy">${accomplishment_copy_course_description}</span>
-                    </p>
+                         <!-- <span class="accomplishment-statement-detail copy">${accomplishment_copy_course_description}</span> -->
+                         <span class="accomplishment-statement-detail copy">a course offered by the <br>Local Authority Services National Training Group<br>
+                        and delivered by 
+                        Climate Ireland.
+                    </span>
+                        </p>
                 </div>
 
             </div>
@@ -116,26 +150,33 @@ font-size: 2.5rem;
              
                     <li class="wrapper-organization">
                         <div class="organization">
-                            <img class="organization-logo" src="${static.url('images/CCMA_logo.png')}" alt="${platform_name}">
+                            <img class="organization-logo" src="${static.url('images/CCMA_logo.png')}" alt="CCMA">
                         </div>
                     </li>
                     <li class="wrapper-organization">
                         <div class="organization">
-                            <img class="organization-logo" src="${static.url('images/LGMA_logo.png')}" alt="${platform_name}">
+                            <img class="organization-logo" src="${static.url('images/LGMA_logo.png')}" alt="LGMA">
                         </div>
                     </li>
                     <li class="wrapper-organization">
                             <div class="organization">
-                                <img class="organization-logo" src="${static.url('images/CARO_logo.png')}" alt="${platform_name}">
+                                <img class="organization-logo" style="left:60%" src="${static.url('images/CARO_logo.png')}" alt="CARO">
                             </div>
                         </li>
-                    <li class="wrapper-organization">
-                            <div class="organization organization-edX">
-                                <img class="organization-logo" src="${static.url('images/CI_logo.png')}" alt="${platform_name}">
-                            </div>
-                        </li>
+                        <li class="wrapper-organization">
+                                <div class="organization">
+                                    <img class="organization-logo" src="${static.url('images/lasntg-logo.png')}" alt="LASNTG">
+                                </div>
+                            </li>
+                        <li class="wrapper-organization">
+                                <div class="organization organization-edX">
+                                    <img class="organization-logo" src="${static.url('images/CI_logo.png')}" alt="${platform_name}">
+                                </div>
+                            </li>
+       
                 </ul>
             </div>
+
 
 
 <!-- DCasey 20200819: 'orgnaization_logo' only accecepts a single organzation not a list, an option could be to create a .png with all logos
@@ -156,15 +197,38 @@ font-size: 2.5rem;
   
           
             <!--certID was added by D.Casey-->
-            <div class="certID" style="width: 100%;overflow: hidden; margin-left:20%">
-                <dl class="" style="width: 50%;float: left">
+            <!-- <div class="certID" style="width: 100%;overflow: hidden; margin-left:5%">
+                    <dl class="" style="width: 100%;float: left margin-botton:0.3125rem;">
+                        <dt class="label copy copy-meta">CPD Accredited By:</dt>
+                            <dd class="value copy copy-base">
+                                <div class="cilt-accredited-orgs">
+    
+                                                <img class="organization-logo" style="max-width: 116px" src="${static.url('images/eng_ireland_logo_cropped_small.png')}" alt="Engineers Ireland">
+                                    <img class="organization-logo" style="max-width: 116px" src="${static.url('images/ipi_logo_small.png')}" alt="Irish Institute of Planners">
+                                </div>
+                            </dd>
+                        </dl>
+       
+                </div> -->
+            <div class="certID" style="width: 100%;overflow: hidden; margin-left:5%">
+                <dl class="" style="width: 40%;float: left">
+                    <dt class="label copy copy-meta">CPD Accredited By:</dt>
+                        <dd class="value copy copy-base">
+                            <div class="cilt-accredited-orgs">
+
+                                            <img class="organization-logo" style="max-width: 140px" src="${static.url('images/eng_ireland_logo_cropped_small.png')}" alt="Engineers Ireland">
+                                <img class="organization-logo" style="max-width: 140px; margin-left:10px" src="${static.url('images/IPI_logo_small.png')}" alt="Irish Institute of Planners">
+                            </div>
+                        </dd>
+                    </dl>
+                <dl class="" style="width: 20%;float: left">
                 <dt class="label copy copy-meta">${certificate_date_issued_title}</dt>
-                    <dd class="value copy copy-base">${certificate_date_issued}</dd>
+                    <dd class="value copy copy-base" style="margin-top:10px">${certificate_date_issued}</dd>
                 </dl>
-                <dl class="" style="width: 50%;float: right">
+                <dl class="" style="width: 40%;float: right">
               
                     <dt class="label copy copy-meta">${certificate_id_number_title}:</dt>
-                    <dd class="value copy copy-base">${certificate_id_number}</dd>
+                    <dd class="value copy copy-base" style="margin-top:10px">${certificate_id_number}</dd>
                 </dl>
             </div>
         </div>
