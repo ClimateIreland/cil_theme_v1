@@ -1,0 +1,77 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+<%block name="pagetitle">${_("Frequently Asked Questions")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("Frequently Asked Questions")}</%block>
+        </h1>
+
+<ul class="">
+        <li><a href="#id0">I am having issues registering, why is my username not accepted?</a></li>
+        <li><a href="#id0">I am having issues registering, my email belongs to an existing account, can you help?</a></li>
+        <li><a href="#id1">I have registered, but I do not see any courses on my dashboard?</a></li>                      
+        <li><a href="#id2">I am having issues progressing past a section, why is content locked?</a></li>
+        <li><a href="#id3">I have completed a course, do I need a copy of the certificate as proof of completion?</a></li>
+        <li><a href="#id4">I have completed a course, how do I access my certificate?</a></li>
+        <li><a href="#id5">Why can't I use Internet Explorer?</a></li>
+        <li><a href="#id6">Why are the flip cards not rotating?</a></li>
+                </ul>
+
+                <h2 id="id0" class="text-center" ><strong>Why is my username not accepted?</strong></h2>
+                <p>Usually this is because you have included spaces in your username. 
+                    Usernames can only contain letters (A-Z, a-z), numerals (0-9), underscores (_), and hyphens (-). Spaces are not allowed.</p>
+
+                <p>If your name is "Joe Soap" you could set your username as "joe_soap" or even "jsoap".</p>
+                <h2 class="text-center" id="id1"><strong>My email belongs to an existing account, can you help?</strong></h2>
+
+                <p>If you have already registered on the system you can sign in from the sign-in page. Go to: <a href="/login?next=%2F">Sign In</a></p>
+                <p>If you forget your password you can reset it by following the "Need help signing in?" link found on the Sign In page.</p>
+                    
+<h2 class="text-center" id="id2"><strong>I do not see any courses on my dashboard, can you help?</strong></h2>
+
+<p>Enrolment to our courses are linked to the email address provided to us by your organisation. 
+    Please ensure that you are using your work email. If you have multiple work email addresses or your work email has recently changed please contact your organisations training officer to find our which email address you should be using.</p>
+   <p>You can change your email through your <a href="/account/settings">Account Settings</a> page after signing in.</p>
+<p> If required the training officer can contact learn@climateireland.ie to confirm any required updates. .</p>
+
+<h2 class="text-center" id="id3"><strong>Why is content locked?</strong></h2>
+
+<p>You may not have completed a required sub-section. The “Go To Prerequisite Section” button will be 
+    bring you to the last sub-section of the prerequisite section, but you may not have completed a previous sub-section.</p>
+
+<p>
+        Check that you have a green tick for each of the sub-sections in the prerequisite section. 
+        If you are missing a tick from a sub-section either click on the sub-section or navigate to the sub-section using the "Previous" and "Next" buttons. 
+</p>
+
+
+<p>
+        Remember to move on to get a tick on a sub-section you must:</p>
+        <ul>
+                <li>Watch all videos until the very very end</li>
+                <li>Access all content, rotate all flip cards and view all sliders</li>
+                <li>Spend a minimum of 10 seconds on each piece of content</li>
+                <li>Answer knowledge checker questions correctly</li>
+        </ul>
+
+<h2 class="text-center" id="id4"><strong>Do I need a copy of my certificate as proof of completion?</strong></h2>
+
+<p>No. If you have completed the course, your completion has been recorded on our system and will be reported to your training officer at the end of the course period.</p>
+
+<h2 class="text-center" id="id5"><strong>How do I access my certificate?</strong></h2>
+
+<p>You can request, view and then print your certificate by accessing the Progress tab in the course. When printing we advise printing the certificate orientated as landscape, with no margins, with background image included and the header/footer removed.</p>
+    <h2 class="text-center" id="id6"><strong>Why can't I use Internet Explorer?</strong></h2>
+
+    <p>For the same reason why you can't play CDs on your favourite cassette walkman. 
+        Microsoft Internet Explorer is an old technology that is coming to the end of its life. 
+        Modern web-browsers support a much richer interactive browsing experience that we hope you appreciate throughout our courses.</p>
+        <h2 class="text-center" id="id7"><strong>Why are the flip cards not rotating?</strong></h2>
+
+        <p>You are probably using Internet Explorer, if not please contact the team.</p>
+                 
+    </section>
+</main>
